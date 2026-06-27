@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anand Dental Hub — M.D.S Clinic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f1f3ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#006492",
+                        "secondary": "#4d6265",
+                        "on-tertiary-fixed": "#002023",
+                        "on-tertiary-container": "#003237",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#d7e2ff",
+                        "on-tertiary-fixed-variant": "#0d4e54",
+                        "surface-bright": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#364a4d",
+                        "on-primary-container": "#003049",
+                        "primary-fixed": "#cae6ff",
+                        "on-error-container": "#93000a",
+                        "background": "#f9f9ff",
+                        "secondary-container": "#d0e7ea",
+                        "on-primary-fixed": "#001e2f",
+                        "error": "#ba1a1a",
+                        "primary-container": "#2d9cdb",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#3f4850",
+                        "on-secondary-fixed": "#091f21",
+                        "inverse-surface": "#263046",
+                        "tertiary": "#2d666d",
+                        "tertiary-container": "#659da3",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#cfdaf6",
+                        "secondary-fixed": "#d0e7ea",
+                        "inverse-on-surface": "#edf0ff",
+                        "surface": "#f9f9ff",
+                        "primary-fixed-dim": "#8ccdff",
+                        "secondary-fixed-dim": "#b4cbce",
+                        "surface-container": "#e8edff",
+                        "on-surface": "#101b30",
+                        "inverse-primary": "#8ccdff",
+                        "outline": "#6f7881",
+                        "surface-container-high": "#e0e8ff",
+                        "on-background": "#101b30",
+                        "primary": "#006492",
+                        "surface-variant": "#d7e2ff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#53686b",
+                        "tertiary-fixed-dim": "#98d0d7",
+                        "on-primary-fixed-variant": "#004b6f",
+                        "outline-variant": "#bec7d1",
+                        "tertiary-fixed": "#b3ecf3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "section-padding": "80px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "stack-sm": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "stack-md": "16px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "headline-xl-mobile": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-xl": ["Montserrat"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .nav-scrolled { background: rgba(249, 249, 255, 0.95) !important; box-shadow: 0 4px 20px rgba(45, 156, 219, 0.12); padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+        
+        /* Entrance Animations */
+        .animate-fade-in-up { animation: fadeInUp 1s ease-out forwards; opacity: 0; }
+        .animate-fade-in-left { animation: fadeInLeft 1s ease-out forwards; opacity: 0; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Hover Effects */
+        .hover-lift { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 12px 24px -10px rgba(0, 100, 146, 0.2); }
+
+        /* Floating WhatsApp */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .animate-fade-in-up, .animate-fade-in-left, .animate-float, .hover-lift {
+                animation: none !important;
+                transition: none !important;
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden scroll-smooth" oncontextmenu="return false ">
+
+    
+<!-- Navbar -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-surface/80 backdrop-blur-md shadow-sm" id="top-nav">
+<nav class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center transition-all duration-500" id="nav-inner">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-primary font-bold tracking-tight">Anand Dental Hub</span>
+</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary font-bold pb-1 font-body-md" href="#home">Home</a>
+<a class="text-secondary hover:text-primary transition-colors duration-200 font-body-md" href="#about">About</a>
+<a class="text-secondary hover:text-primary transition-colors duration-200 font-body-md" href="#services">Services</a>
+<a class="text-secondary hover:text-primary transition-colors duration-200 font-body-md" href="#why-us">Why Us</a>
+<a class="text-secondary hover:text-primary transition-colors duration-200 font-body-md" href="#testimonials">Testimonials</a>
+<a class="text-secondary hover:text-primary transition-colors duration-200 font-body-md" href="#contact">Contact</a>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<a class="text-primary font-bold flex items-center gap-2" href="tel:78386141278">
+<span class="material-symbols-outlined">call</span>  7838614127
+                </a>
+<button class="bg-primary-container text-on-primary px-6 py-3 rounded-full font-bold hover:scale-95 transition-transform duration-200 shadow-md">
+                    Book Appointment
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</nav>
+<!-- Mobile Nav Menu -->
+<div class="hidden md:hidden bg-surface-bright p-margin-mobile absolute w-full left-0 border-t border-outline-variant shadow-xl" id="mobile-menu">
+<div class="flex flex-col gap-4">
+<a class="text-primary font-bold" href="#home">Home</a>
+<a class="text-secondary" href="#about">About</a>
+<a class="text-secondary" href="#services">Services</a>
+<a class="text-secondary" href="#why-us">Why Us</a>
+<a class="text-secondary" href="#testimonials">Testimonials</a>
+<a class="text-secondary" href="#contact">Contact</a>
+<button class="bg-primary-container text-on-primary w-full py-3 rounded-xl font-bold">Book Appointment</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="pt-32 pb-section-padding px-margin-mobile md:px-margin-desktop bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary-fixed/30 via-background to-background relative overflow-hidden" id="home">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="animate-fade-in-up" style="animation-delay: 0.2s;">
+<div class="inline-flex items-center gap-2 bg-secondary-container px-4 py-1.5 rounded-full mb-6">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-md text-on-secondary-container">5.0 GOOGLE RATING CLINIC</span>
+</div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mb-6 leading-tight">
+                    Your Smile, <br/><span class="text-primary">Our Passion</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl animate-fade-in-up" style="animation-delay: 0.4s;">
+                    Experience world-class dental care at Kolkata's premier M.D.S Clinic. We combine artistic precision with medical excellence to craft your perfect smile.
+                </p>
+<div class="flex flex-wrap gap-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+<button class="bg-primary-container text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg transition-all duration-300">Book Appointment</button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/5 transition-all duration-300">Call Now</button>
+</div>
+<div class="mt-12 flex items-center gap-4 animate-fade-in-up" style="animation-delay: 0.8s;">
+<div class="flex -space-x-3">
+<img alt="Patient 1" class="w-12 h-12 rounded-full border-4 border-background" 
+src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrLqfZtg565m3luGukzFU72nBkdg8mKQKbReI9WRaSc-mWps4nEFY9qI2I6hDfNgoJnqeTSx87PSBq7TdarURdPMGY6Bq0Ewn3O0rgrPciyoDjvajZsBNs4GRAlkklJL9k7JOSKMSf9vx7gCDoMMPDQSQ_Ff01J414aNNEq5B_x7Q7XMt3WECRhVr-YQN3NT2d12r7HHdblmM7uhCacIQZst_d197QQn9xMUInjUKyCsb8IFNx6tieBv-PvuGqSGoGf8eAv0ouiQs"/>
+<img alt="Patient 2" class="w-12 h-12 rounded-full border-4 border-background
+" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz4Nro9IwlSz4Ko32RSXFBfCgVKA9OYchj-PBZj497o8_bBiHSbbN8n3QzXboHGaMDuoD1m53roo6K_8GxAXRGgS1mX2Nmsu-bE_DIN2mhKJpE3VgT-yb6Mm2cSi5sF6EMemJMGWfdc-OoOBRpC6ztY1PZABNUpfX16Py8vPHQtT0rHrFxMCiK1Ftcla9kg1apXAj6-bNcE0bIdGRZumtf05lYiw1vXC5DY8TZDUx8wvEjfmixdhTUaTpt8DmcsEj2xzvEFPYVsaY"/>
+<img alt="Patient 3" class="w-12 h-12 rounded-full border-4 border-background"
+ src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoQgQwmonmqiuLIkcxLrrvPWc-fmo8-rOwW_HwrsNuIpgausRTLnJzCpxgod-8jX5o_JYiEzx3TsS4qXCuAt1wCA3j0sKCaJLp8aZFINnX78ayoi19QRuzjzVjHyN7iDwmiZJnHc4D9V4MXiHJIo6pePtwCiN7jPGu8vp54WXtdByZ_uj6x_0ukBRMTrz8I9VinsHY20cl_4ylVpsOdHw8Xm2vFdYFwIUlR5ZAcdPxi5VTU953vAmvOil6X9huYvB4ZnxL3uL8pj0"/>
+</div>
+<div class="text-body-sm text-on-surface-variant">
+                        Joined by <span class="font-bold text-primary">10k+ Happy Patients</span> in Kolkata
+                    </div>
+</div>
+</div>
+<div class="relative animate-fade-in-left" style="animation-delay: 0.3s;">
+<div class="absolute -z-10 w-[120%] h-[120%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,_rgba(45,156,219,0.1)_0%,_transparent_70%)] rounded-full"></div>
+<img alt="Professional Smiling Patient" class="rounded-3xl shadow-2xl relative z-10 w-full"
+ src="data:image/jpeg;base64,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"/>
+<div class="absolute bottom-6 -left-6 md:bottom-12 md:-left-12 bg-white p-6 rounded-2xl shadow-xl z-20 flex items-center gap-4 glass-card reveal">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<div class="font-bold text-primary">ISO Certified</div>
+<div class="text-label-md text-on-surface-variant">Safety &amp; Hygiene Protocol</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-12 px-margin-mobile md:px-margin-desktop bg-inverse-surface text-on-primary-fixed">
+<div class="max-w-container-max mx-auto grid grid-cols-2 lg:grid-cols-4 gap-gutter text-center">
+<div class="reveal">
+<div class="text-headline-xl font-bold mb-2">10k+</div>
+<div class="text-label-md uppercase tracking-widest opacity-80">Happy Patients</div>
+</div>
+<div class="reveal" style="transition-delay: 100ms;">
+<div class="text-headline-xl font-bold mb-2">15+</div>
+<div class="text-label-md uppercase tracking-widest opacity-80">Years Experience</div>
+</div>
+<div class="reveal" style="transition-delay: 200ms;">
+<div class="text-headline-xl font-bold mb-2">25k+</div>
+<div class="text-label-md uppercase tracking-widest opacity-80">Treatments Done</div>
+</div>
+<div class="reveal" style="transition-delay: 300ms;">
+<div class="text-headline-xl font-bold mb-2">5.0</div>
+<div class="text-label-md uppercase tracking-widest opacity-80">Star Rating</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop bg-surface" id="about">
+<div class="max-w-container-max mx-auto flex flex-col lg:flex-row items-center gap-20">
+<div class="lg:w-1/2 reveal">
+<div class="grid grid-cols-2 gap-4">
+<img alt="Clinic Interior" class="rounded-2xl mt-12 shadow-lg hover-lift"
+ src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVU2K1LLjMPzkVujGLAR8qq8rde1FtPtZBTSFSoFRl96pKNBUAer6pwykIYEJgnKcMPd41gu4vV0sPbzdjdxqxfyMHeye_PqGJaPxkZsokNmP7vp3Ebp30rdT0STzKHKlkKvly20M2x3GDTfM7ZSZbcH0z_Xjxt64ZrwHuzEb-g87iyWpFLa4mjq9yNxekETD3YJO5N_rbdXPDZ7mFWfCuVt5yjswKLektshYZFYS6D2-u6l4v_8Q685SvbXE3eVXRVHA2L3qKtdk"/>
+<img alt="Dentist at work" class="rounded-2xl shadow-lg hover-lift" 
+src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHxjOE8WRoer5a5nLaK5lonJkTRgm5EU18niccqhEQVvh6KQlwl010SzERqx5II8msJ3ShBrNf8hu6SnckkhMBsI2in_lzXRS6PbjiITq6wWumYcDfYQ6itBjsf2ZYvrdbq2qWyUdoWrvijevmezSqw3N6s6gc-B5WOdg_DwfTc8UpDudhhe55sysXIZ0z0k7H8xlUiBGngPV2bxRh3NPT7uWjMBbvPmLdwQARbOsA_r7cPHd3cYE_0rvmnM093NySbTpPzt3cLp8"/>
+</div>
+</div>
+<div class="lg:w-1/2 reveal">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-6">Redefining Dental Excellence with <span class="text-primary">M.D.S Expertise</span></h2>
+<p class="text-body-lg text-on-surface-variant mb-6">
+                    At Anand Dental Hub, we move away from clinical sterility toward a sanctuary-like atmosphere. Our clinic is led by highly qualified M.D.S specialists dedicated to providing advanced aesthetic and restorative dentistry.
+                </p>
+<div class="space-y-4 mb-10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<div>
+<p class="font-bold text-on-surface">Modern Precision Technology</p>
+<p class="text-body-sm text-on-surface-variant">Intra-oral cameras and digital X-rays for zero-error diagnosis.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<div>
+<p class="font-bold text-on-surface">Uncompromising Hygiene</p>
+<p class="text-body-sm text-on-surface-variant">Class-B Autoclave sterilization following international standards.</p>
+</div>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:gap-4 transition-all duration-300 hover-lift">
+                    Learn More About Us <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="services">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="text-headline-lg font-headline-lg mb-4">Our Premium Services</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Comprehensive dental care utilizing advanced techniques for lasting results and beautiful smiles.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+<!-- Service Cards -->
+<div class="bg-white p-8 rounded-2xl shadow-[0px_4px_20px_rgba(45,156,219,0.08)] hover-lift transition-all duration-300 reveal border-t-4 border-primary">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">settings_suggest</span>
+<h3 class="font-bold text-on-surface mb-2">Dental Implants</h3>
+<p class="text-body-sm text-on-surface-variant">Permanent replacement for missing teeth with titanium anchors.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-[0px_4px_20px_rgba(45,156,219,0.08)] hover-lift transition-all duration-300 reveal border-t-4 border-primary" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">healing</span>
+<h3 class="font-bold text-on-surface mb-2">RCT</h3>
+<p class="text-body-sm text-on-surface-variant">Advanced pain-free root canal treatments for tooth saving.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-[0px_4px_20px_rgba(45,156,219,0.08)] hover-lift transition-all duration-300 reveal border-t-4 border-primary" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">auto_fix_high</span>
+<h3 class="font-bold text-on-surface mb-2">Teeth Whitening</h3>
+<p class="text-body-sm text-on-surface-variant">Professional laser whitening for a brilliant white smile.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-[0px_4px_20px_rgba(45,156,219,0.08)] hover-lift transition-all duration-300 reveal border-t-4 border-primary" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">grid_view</span>
+<h3 class="font-bold text-on-surface mb-2">Orthodontics</h3>
+<p class="text-body-sm text-on-surface-variant">Invisalign and clear braces for perfect alignment.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-[0px_4px_20px_rgba(45,156,219,0.08)] hover-lift transition-all duration-300 reveal border-t-4 border-primary" style="transition-delay: 400ms;">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">layers</span>
+<h3 class="font-bold text-on-surface mb-2">Crowns &amp; Bridges</h3>
+<p class="text-body-sm text-on-surface-variant">Durable and aesthetic ceramic restorations.</p>
+</div>
+<!-- Row 2 -->
+<div class="bg-white p-8 rounded-2xl shadow-[0px_4px_20px_rgba(45,156,219,0.08)] hover-lift transition-all duration-300 reveal border-t-4 border-primary">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">child_care</span>
+<h3 class="font-bold text-on-surface mb-2">Pediatric Dentistry</h3>
+<p class="text-body-sm text-on-surface-variant">Friendly dental care specialized for our little patients.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-[0px_4px_20px_rgba(45,156,219,0.08)] hover-lift transition-all duration-300 reveal border-t-4 border-primary">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">medical_services</span>
+<h3 class="font-bold text-on-surface mb-2">Gum Treatment</h3>
+<p class="text-body-sm text-on-surface-variant">Periodontal laser therapy for healthy pink gums.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-[0px_4px_20px_rgba(45,156,219,0.08)] hover-lift transition-all duration-300 reveal border-t-4 border-primary">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">vaccines</span>
+<h3 class="font-bold text-on-surface mb-2">Extraction</h3>
+<p class="text-body-sm text-on-surface-variant">Atraumatic surgical and simple extractions.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-[0px_4px_20px_rgba(45,156,219,0.08)] hover-lift transition-all duration-300 reveal border-t-4 border-primary">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">blur_on</span>
+<h3 class="font-bold text-on-surface mb-2">Dentures</h3>
+<p class="text-body-sm text-on-surface-variant">Comfortable flexible and rigid partial/full dentures.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-[0px_4px_20px_rgba(45,156,219,0.08)] hover-lift transition-all duration-300 reveal border-t-4 border-primary">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">face</span>
+<h3 class="font-bold text-on-surface mb-2">Cosmetic Dentistry</h3>
+<p class="text-body-sm text-on-surface-variant">Veneers and smile design for a movie-star look.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop bg-white" id="why-us">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col lg:flex-row gap-gutter">
+<div class="lg:w-1/3 reveal">
+<h2 class="text-headline-lg font-headline-lg mb-6">Why Patients Choose <span class="text-primary">Anand Dental</span></h2>
+<p class="text-body-md text-on-surface-variant mb-8">We deliver more than just dental treatments; we provide a stress-free experience that prioritizes your comfort and health outcomes.</p>
+<div class="bg-secondary-container p-8 rounded-3xl hover-lift">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+<h4 class="font-bold text-headline-md mb-2">Safe &amp; Sterile</h4>
+<p class="text-body-sm text-on-secondary-container">Following the highest protocols of sterilization to ensure 100% patient safety during all procedures.</p>
+</div>
+</div>
+<div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Feature Cards -->
+<div class="flex items-start gap-6 p-6 rounded-2xl hover:bg-surface-container-low transition-all duration-300 reveal hover-lift">
+<div class="bg-primary-container/10 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-2">M.D.S Qualified</h3>
+<p class="text-body-sm text-on-surface-variant">Expertise of postgraduate dentists in various specialties.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 p-6 rounded-2xl hover:bg-surface-container-low transition-all duration-300 reveal hover-lift">
+<div class="bg-primary-container/10 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">sentiment_satisfied</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-2">Painless Procedures</h3>
+<p class="text-body-sm text-on-surface-variant">Modern anesthesia and laser techniques for zero-pain treatments.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 p-6 rounded-2xl hover:bg-surface-container-low transition-all duration-300 reveal hover-lift">
+<div class="bg-primary-container/10 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">precision_manufacturing</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-2">Advanced Tech</h3>
+<p class="text-body-sm text-on-surface-variant">3D Scanning, intra-oral imaging, and digital smile design.</p>
+</div>
+</div>
+<div class="flex items-start gap-6 p-6 rounded-2xl hover:bg-surface-container-low transition-all duration-300 reveal hover-lift">
+<div class="bg-primary-container/10 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">history</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-2">Lifetime Support</h3>
+<p class="text-body-sm text-on-surface-variant">Warrantied restorations and dedicated follow-up care.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop bg-primary text-on-primary relative overflow-hidden" id="testimonials">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<h2 class="text-headline-lg font-headline-lg text-center mb-16 reveal">Real Smiles, Real Stories</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 reveal hover-lift">
+<div class="flex gap-1 mb-4 text-primary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic mb-6 text-lg">"The best dental experience in Kolkata. The doctors are incredibly patient and the clinic is so clean it feels like a spa. My root canal was completely painless!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-fixed-dim rounded-full flex items-center justify-center font-bold text-primary">RK</div>
+<div>
+<p class="font-bold">Rahul Kapoor</p>
+<p class="text-body-sm opacity-70">Google Review</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 reveal hover-lift" style="transition-delay: 100ms;">
+<div class="flex gap-1 mb-4 text-primary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic mb-6 text-lg">"Got my implants done here. Highly impressed by the M.D.S expertise. They used advanced scanning and the fit is perfect. Worth every penny for the quality."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-fixed-dim rounded-full flex items-center justify-center font-bold text-primary">SB</div>
+<div>
+<p class="font-bold">Sumit Bose</p>
+<p class="text-body-sm opacity-70">Google Review</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 reveal hover-lift" style="transition-delay: 200ms;">
+<div class="flex gap-1 mb-4 text-primary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic mb-6 text-lg">"Highly recommend for pediatric care. My daughter was scared of dentists but the staff here was so friendly and playful she didn't even notice the treatment."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-fixed-dim rounded-full flex items-center justify-center font-bold text-primary">AM</div>
+<div>
+<p class="font-bold">Anjali Mishra</p>
+<p class="text-body-sm opacity-70">Google Review</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Map -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop" id="contact">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+<div class="reveal">
+<h2 class="text-headline-lg font-headline-lg mb-8">Ready to Transform Your Smile?</h2>
+<p class="text-body-lg text-on-surface-variant mb-10">Fill out the form to schedule your consultation. Our team will contact you within 2 business hours.</p>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<input class="bg-surface border-outline-variant rounded-xl p-4 focus:ring-primary focus:border-primary w-full" 
+placeholder="Full Name" type="text"/>
+<input class="bg-surface border-outline-variant rounded-xl p-4 focus:ring-primary focus:border-primary w-full"
+ placeholder="Phone Number" type="tel"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<input class="bg-surface border-outline-variant rounded-xl p-4 focus:ring-primary focus:border-primary w-full" 
+placeholder="Email Address" type="email"/>
+<select class="bg-surface border-outline-variant rounded-xl p-4 focus:ring-primary focus:border-primary w-full">
+<option>Select Service</option>
+<option>Implants</option>
+<option>RCT</option>
+<option>Whitening</option>
+<option>General Checkup</option>
+</select>
+</div>
+<input class="w-full bg-surface border-outline-variant rounded-xl p-4 focus:ring-primary focus:border-primary"
+ type="date"/>
+<textarea class="w-full bg-surface border-outline-variant rounded-xl p-4 focus:ring-primary focus:border-primary" placeholder="Your Message" rows="4"></textarea>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold w-full hover:bg-primary/90 transition-all shadow-lg hover-lift" type="submit">Confirm Appointment Request</button>
+</form>
+</div>
+<div class="space-y-10 reveal">
+<div class="bg-surface-container-high p-10 rounded-3xl hover-lift">
+<h3 class="font-bold text-headline-md mb-6">Clinic Location</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-bold">Address</p>
+<p class="text-on-surface-variant">14, Syed Amir Ali Ave, Kolkata 700017</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div>
+<p class="font-bold">Opening Hours</p>
+<p class="text-on-surface-variant">Mon - Sat: 10:00 AM - 08:00 PM<br/>Sun: By Appointment Only</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">call</span>
+<div>
+<p class="font-bold">Emergency Phone</p>
+<p class="text-on-surface-variant">09036340518</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-80 w-full bg-outline-variant rounded-3xl overflow-hidden relative shadow-inner">
+<div class="absolute inset-0 flex items-center justify-center text-on-surface-variant/50">
+<span class="material-symbols-outlined text-6xl">map</span>
+</div>
+<iframe
+ allowfullscreen="" class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700" data-location="Kolkata" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.970221370258!2d88.3619177!3d22.5428453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0276df798b0451%3A0x6296996656096001!2s14%2C%20Syed%20Amir%20Ali%20Ave%2C%20Park%20Circus%2C%20Ballygunge%2C%20Kolkata%2C%20West%20Bengal%20700017!5e0!3m2!1sen!2sin!4v1715800000000!5m2!1sen!2sin">
+</iframe>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant/30 py-section-padding px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="space-y-6">
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim font-bold">Anand Dental Hub</span>
+<p class="text-body-sm text-on-surface-variant dark:text-surface-variant">Kolkata's most trusted M.D.S clinic providing advanced restorative and aesthetic dental solutions since 2009.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 bg-primary-container/20 flex items-center justify-center rounded-full text-primary hover:bg-primary-container transition-all hover-lift" href="#">
+<span class="material-symbols-outlined text-sm">face_nod</span>
+</a>
+<a class="w-10 h-10 bg-primary-container/20 flex items-center justify-center rounded-full text-primary hover:bg-primary-container transition-all hover-lift" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-on-surface dark:text-primary-fixed-dim mb-6">Quick Links</h4>
+<ul class="space-y-4 text-body-sm text-on-surface-variant dark:text-surface-variant">
+<li class=""><a class="hover:text-primary hover:translate-x-1 transition-transform duration-200 inline-block" href="#home">Home</a></li>
+<li class=""><a class="hover:text-primary hover:translate-x-1 transition-transform duration-200 inline-block" href="#about">About Us</a></li>
+<li class=""><a class="hover:text-primary hover:translate-x-1 transition-transform duration-200 inline-block" href="#services">Our Services</a></li>
+<li class=""><a class="hover:text-primary hover:translate-x-1 transition-transform duration-200 inline-block" href="#contact">Book Appointment</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface dark:text-primary-fixed-dim mb-6">Resources</h4>
+<ul class="space-y-4 text-body-sm text-on-surface-variant dark:text-surface-variant">
+<li class=""><a class="hover:text-primary hover:translate-x-1 transition-transform duration-200 inline-block" href="#">Patient Portal</a></li>
+<li class=""><a class="hover:text-primary hover:translate-x-1 transition-transform duration-200 inline-block" href="#">Terms of Service</a></li>
+<li class=""><a class="hover:text-primary hover:translate-x-1 transition-transform duration-200 inline-block" href="#">Privacy Policy</a></li>
+<li class=""><a class="hover:text-primary hover:translate-x-1 transition-transform duration-200 inline-block" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface dark:text-primary-fixed-dim mb-6">Newsletter</h4>
+<p class="text-body-sm text-on-surface-variant dark:text-surface-variant mb-6">Get dental health tips and exclusive offers.</p>
+<div class="flex gap-2">
+<input class="bg-surface dark:bg-surface-variant border-none rounded-lg p-3 w-full
+" placeholder="Your Email" type="email"/>
+<button class="bg-primary text-on-primary p-3 rounded-lg hover-lift"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-section-padding pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-label-md text-on-surface-variant dark:text-surface-variant">© 2024 Anand Dental Hub — M.D.S Clinic. All rights reserved.</p>
+<div class="flex gap-6 text-label-md">
+<a class="hover:text-primary" href="#">Sitemap</a>
+<a class="hover:text-primary" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+<a class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-all duration-300 group animate-float animate-pulse-soft" href="https://wa.me/917838614127" rel="noopener noreferrer" target="_blank">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+</svg>
+<span class="font-bold text-sm">Chat with us</span>
+</a>
+<script>
+        // Check for reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!prefersReducedMotion) {
+            // Sticky Header Transition
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('top-nav');
+                const navInner = document.getElementById('nav-inner');
+                if (window.scrollY > 50) {
+                    header.classList.add('nav-scrolled');
+                    navInner.classList.remove('py-4');
+                    navInner.classList.add('py-2');
+                } else {
+                    header.classList.remove('nav-scrolled');
+                    navInner.classList.remove('py-2');
+                    navInner.classList.add('py-4');
+                }
+            });
+
+            // Reveal Animations with IntersectionObserver
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Once active, we don't need to observe anymore
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        } else {
+            // If reduced motion is preferred, ensure all reveal elements are visible
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+        }
+
+        // Smooth Scroll Enhancement
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body >
+</html>
